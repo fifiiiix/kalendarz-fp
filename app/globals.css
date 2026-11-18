@@ -1,0 +1,95 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f6f8fc; color: #1f1f1f; }
+button { font-family: inherit; cursor: pointer; }
+input, textarea, select { font-family: inherit; font-size: 14px; padding: 8px; border: 1px solid #c7c7c7; border-radius: 8px; width: 100%; background: white; }
+label { display: block; margin: 10px 0; font-size: 14px; }
+label input, label textarea { margin-top: 4px; }
+fieldset { border: none; padding: 0; margin: 0; }
+
+.aplikacja { display: flex; min-height: 100vh; }
+.menu { width: 240px; padding: 16px; background: white; border-right: 1px solid #e0e0e0; }
+.menu h1 { font-size: 22px; margin: 0 0 16px; color: #1a73e8; }
+.menu nav { margin-top: 20px; }
+.pozycja { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 10px 14px; margin-bottom: 4px; border: none; background: none; border-radius: 20px; font-size: 14px; text-align: left; }
+.pozycja:hover { background: #eef2fb; }
+.pozycja.aktywna { background: #d3e3fd; font-weight: bold; }
+.odznaka { background: #d93025; color: white; border-radius: 10px; padding: 1px 8px; font-size: 12px; }
+.tresc { flex: 1; padding: 16px; min-width: 0; }
+
+.przycisk { padding: 8px 14px; margin: 4px 4px 0 0; border: 1px solid #c7c7c7; background: white; border-radius: 20px; font-size: 14px; }
+.przycisk:hover { background: #f1f3f4; }
+.przycisk.glowny { background: #1a73e8; border-color: #1a73e8; color: white; }
+.przycisk.glowny:hover { background: #1765cc; }
+.przycisk.czerwony { color: #d93025; border-color: #d93025; }
+.przycisk.duzy { width: 100%; padding: 12px; font-weight: bold; }
+.przyciskIkona { width: 36px; height: 36px; border: none; background: none; border-radius: 50%; font-size: 22px; }
+.przyciskIkona:hover { background: #e8eaed; }
+
+.kalendarz { background: white; border-radius: 12px; padding: 12px; border: 1px solid #e0e0e0; }
+.pasekKalendarza { display: flex; align-items: center; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.pasekKalendarza h2 { margin: 0 8px; font-size: 20px; flex: 1; }
+.przelacznik { display: flex; border: 1px solid #c7c7c7; border-radius: 20px; overflow: hidden; }
+.przelacznik button { padding: 8px 14px; border: none; background: white; font-size: 14px; }
+.przelacznik button.aktywny { background: #d3e3fd; font-weight: bold; }
+
+.siatkaMiesiaca { display: grid; grid-template-columns: repeat(7, 1fr); border-top: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; }
+.naglowekDnia { padding: 6px; text-align: center; font-size: 12px; color: #5f6368; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; }
+.komorka { min-height: 100px; padding: 4px; border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; cursor: pointer; overflow: hidden; }
+.komorka:hover { background: #f8faff; }
+.komorka.szara { background: #fafafa; color: #9aa0a6; }
+.komorka.wybrana { outline: 2px solid #1a73e8; outline-offset: -2px; }
+.numer { display: inline-block; width: 26px; height: 26px; line-height: 26px; text-align: center; border-radius: 50%; font-size: 13px; margin-bottom: 2px; }
+.numer.dzisiaj { background: #1a73e8; color: white; }
+.wiecej { display: block; font-size: 12px; color: #5f6368; }
+
+.karta { display: block; width: 100%; margin-bottom: 3px; padding: 3px 6px; border: none; border-radius: 6px; font-size: 12px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #1f1f1f; }
+.karta.duza { font-size: 14px; padding: 8px 10px; white-space: normal; }
+
+.siatkaTygodnia { display: grid; grid-template-columns: repeat(7, 1fr); border-top: 1px solid #e0e0e0; border-left: 1px solid #e0e0e0; }
+.kolumnaDnia { border-right: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0; min-width: 0; }
+.naglowekTygodnia { padding: 8px; text-align: center; font-size: 13px; border-bottom: 1px solid #e0e0e0; cursor: pointer; }
+.naglowekTygodnia.dzisiaj { background: #1a73e8; color: white; }
+.zawartoscDnia { min-height: 300px; padding: 4px; cursor: pointer; }
+
+.widokDnia { max-height: 600px; overflow-y: auto; border-top: 1px solid #e0e0e0; }
+.wierszGodziny { display: flex; min-height: 48px; border-bottom: 1px solid #eee; cursor: pointer; }
+.etykietaGodziny { width: 60px; padding: 6px; font-size: 12px; color: #5f6368; flex-shrink: 0; }
+.wydarzeniaGodziny { flex: 1; padding: 3px; }
+
+.strona { max-width: 760px; }
+.panel { background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+.wierszListy { display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #e0e0e0; border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
+.wiersz { display: flex; align-items: center; gap: 8px; }
+.wiersz input { width: auto; margin: 0; }
+.filtry { display: flex; gap: 8px; margin-bottom: 12px; }
+.szukaj { margin-bottom: 8px; }
+.info { color: #5f6368; font-size: 13px; margin: 4px 0; }
+.blad { color: #d93025; font-size: 14px; }
+.ok { color: #188038; font-size: 14px; }
+
+.tlo { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center; padding: 12px; z-index: 10; }
+.okno { background: white; border-radius: 14px; padding: 20px; width: 100%; max-width: 520px; max-height: 92vh; overflow-y: auto; }
+.okno h2 { margin-top: 0; }
+.dwaPola { display: flex; gap: 10px; }
+.kolory { display: flex; gap: 8px; margin: 8px 0; }
+.kolor { width: 28px; height: 28px; border-radius: 50%; border: 2px solid transparent; }
+.kolor.wybrany { border-color: #1f1f1f; }
+.listaZaproszonych { max-height: 140px; overflow-y: auto; }
+.dostepnosc { border-top: 1px solid #e0e0e0; margin-top: 12px; }
+.godziny { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.godzina { padding: 6px; border-radius: 8px; border: 1px solid #c7c7c7; font-size: 13px; }
+.godzina small { display: block; font-size: 11px; }
+.godzina.wolna { background: #e6f4ea; }
+.godzina.zajeta { background: #fce8e6; color: #80868b; cursor: not-allowed; }
+.przyciskiOkna { display: flex; justify-content: flex-end; gap: 4px; margin-top: 12px; }
+
+@media (max-width: 800px) {
+  .aplikacja { flex-direction: column; }
+  .menu { width: 100%; border-right: none; border-bottom: 1px solid #e0e0e0; }
+  .menu nav { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; }
+  .pozycja { width: auto; }
+  .komorka { min-height: 64px; }
+  .karta { font-size: 10px; padding: 2px 3px; }
+  .godziny { grid-template-columns: repeat(3, 1fr); }
+  .filtry { flex-direction: column; }
+}
